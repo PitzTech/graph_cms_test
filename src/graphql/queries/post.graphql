@@ -2,7 +2,7 @@ query Post($slug: String!) {
   post(where: { slug: $slug }) {
     title
     content {
-      markdown
+      html
     }
     coverImage {
       url(
