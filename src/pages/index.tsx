@@ -1,4 +1,7 @@
 import { GetServerSideProps } from "next";
+import { Features } from "../components/Features";
+import { Hero } from "../components/Hero";
+import { Pricing } from "../components/Pricing";
 import { PageDocument, usePageQuery } from "../generated/graphql";
 import { client, ssrCache } from "../lib/urql";
 
@@ -9,7 +12,13 @@ export default function Home() {
     },
   });
 
-  return <h1>{data?.page.title}</h1>;
+  return (
+    <>
+      <Hero title={data.page.title} subtitle={data.page.subtitle} />
+      <Features />
+      <Pricing />
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
