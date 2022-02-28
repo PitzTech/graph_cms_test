@@ -1,7 +1,7 @@
 type HeroProps = {
   title: string;
   subtitle: string;
-}
+};
 
 export function Hero({ title, subtitle }: HeroProps) {
   return (
@@ -37,5 +37,5 @@ export function Hero({ title, subtitle }: HeroProps) {
         </main>
       </div>
     </div>
-  )
+  );
 }

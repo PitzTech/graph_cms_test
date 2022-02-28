@@ -1,18 +1,21 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import Link from 'next/link';
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
-]
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+];
 
 export function Header() {
   return (
     <div className="relative bg-gray-50 overflow-hidden">
-      <div className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
+      <div
+        className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full"
+        aria-hidden="true"
+      >
         <div className="relative h-full max-w-7xl mx-auto">
           <svg
             className="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2"
@@ -30,10 +33,21 @@ export function Header() {
                 height={20}
                 patternUnits="userSpaceOnUse"
               >
-                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                <rect
+                  x={0}
+                  y={0}
+                  width={4}
+                  height={4}
+                  className="text-gray-200"
+                  fill="currentColor"
+                />
               </pattern>
             </defs>
-            <rect width={404} height={784} fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+            <rect
+              width={404}
+              height={784}
+              fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)"
+            />
           </svg>
           <svg
             className="absolute left-full transform -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2"
@@ -51,10 +65,21 @@ export function Header() {
                 height={20}
                 patternUnits="userSpaceOnUse"
               >
-                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+                <rect
+                  x={0}
+                  y={0}
+                  width={4}
+                  height={4}
+                  className="text-gray-200"
+                  fill="currentColor"
+                />
               </pattern>
             </defs>
-            <rect width={404} height={784} fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
+            <rect
+              width={404}
+              height={784}
+              fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)"
+            />
           </svg>
         </div>
       </div>
@@ -62,7 +87,10 @@ export function Header() {
       <div className="relative pt-6 pb-6">
         <Popover>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <nav className="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+            <nav
+              className="relative flex items-center justify-between sm:h-10 md:justify-center"
+              aria-label="Global"
+            >
               <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
                 <div className="flex items-center justify-between w-full md:w-auto">
                   <a href="#">
@@ -83,8 +111,8 @@ export function Header() {
               </div>
               <div className="hidden md:flex md:space-x-10">
                 {navigation.map((item) => (
-                  <Link href={item.href}>
-                    <a key={item.name} className="font-medium text-gray-500 hover:text-gray-900">
+                  <Link href={item.href} key={item.name}>
+                    <a className="font-medium text-gray-500 hover:text-gray-900">
                       {item.name}
                     </a>
                   </Link>
@@ -155,5 +183,5 @@ export function Header() {
         </Popover>
       </div>
     </div>
-  )
+  );
 }
